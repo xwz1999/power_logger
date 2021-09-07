@@ -79,9 +79,8 @@ class _DioResponseViewState extends State<DioResponseView> {
           child: HighlightView(
             widget.data!.data,
             language: _dioParser.highlight,
-            theme: Theme.of(context).brightness == Brightness.light
-                ? atomOneLightTheme
-                : atomOneDarkTheme,
+            theme: atomOneLightTheme
+               ,
           ),
         );
       case ContentType.JSON:
@@ -95,7 +94,7 @@ class _DioResponseViewState extends State<DioResponseView> {
             child: HighlightView(
               json,
               language: 'json',
-              theme: atomOneDarkTheme,
+              theme: atomOneLightTheme,
             ),
           );
         }
@@ -104,7 +103,7 @@ class _DioResponseViewState extends State<DioResponseView> {
           child: HighlightView(
             prettyJson(widget.data!.data),
             language: 'json',
-            theme: atomOneDarkTheme,
+            theme: atomOneLightTheme,
           ),
         );
       case ContentType.IMAGE:
@@ -121,7 +120,7 @@ class _DioResponseViewState extends State<DioResponseView> {
       child: HighlightView(
         prettyJson(widget.data!.data),
         language: 'json',
-        theme: atomOneDarkTheme,
+        theme: atomOneLightTheme,
       ),
     );
   }
