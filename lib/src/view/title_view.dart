@@ -9,7 +9,7 @@ class TitleView extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.headline4!,
+        style: TextStyle(fontSize: 26,color: Color(0xFF666666)),
         child: title,
       ),
     );

@@ -105,7 +105,7 @@ class _FabButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).accentColor,
+        color: Colors.blue,
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
