@@ -21,6 +21,7 @@ class _PowerLoggerViewState extends State<PowerLoggerView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Logger View'),
+        backgroundColor: Colors.blue,
         actions: [
           IconButton(
             icon: Icon(Icons.clear_all_rounded),
@@ -47,6 +48,7 @@ class _PowerLoggerViewState extends State<PowerLoggerView> {
         builder: (context, kSetState) {
           _setState = kSetState;
           return BottomNavigationBar(
+            backgroundColor: Colors.white,
             currentIndex: _currentIndex,
             onTap: (index) {
               _currentIndex = index;
@@ -59,14 +61,14 @@ class _PowerLoggerViewState extends State<PowerLoggerView> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.assessment), label: 'Log'),
+                  icon: Icon(Icons.assessment,color: Color(0xFF666666),),activeIcon: Icon(Icons.assessment,color: Colors.blue,), label: '日志'),
               BottomNavigationBarItem(
-                icon: Icon(Icons.perm_device_information),
-                label: 'Info',
+                icon: Icon(Icons.perm_device_information,color: Color(0xFF666666),),activeIcon: Icon(Icons.perm_device_information,color: Colors.blue,),
+                label: '信息',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
+                icon: Icon(Icons.settings,color: Color(0xFF666666),),activeIcon: Icon(Icons.settings,color: Colors.blue,),
+                label: '设置',
               ),
             ],
           );
