@@ -50,6 +50,8 @@ class _PowerLoggerViewState extends State<PowerLoggerView> {
           return BottomNavigationBar(
             backgroundColor: Colors.white,
             currentIndex: _currentIndex,
+            selectedLabelStyle: TextStyle(color: Colors.blue,fontSize: 14),
+            unselectedLabelStyle:  TextStyle(color: Color(0xFF666666),fontSize: 12),
             onTap: (index) {
               _currentIndex = index;
               kSetState(() {});
