@@ -6,6 +6,7 @@ import 'package:power_logger/src/view/dio_error_view.dart';
 class DioErrorBuilder extends StatelessWidget {
   final DioError data;
   final DateTime date;
+
   DioErrorBuilder({Key? key, required this.data, required this.date})
       : super(key: key);
 

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:power_logger/src/theme/custom_theme.dart';
 import 'package:power_logger/src/view/box_view.dart';
 import 'package:power_logger/src/view/table_view.dart';
 import 'package:power_logger/src/view/title_view.dart';
@@ -66,33 +67,36 @@ class _DioErrorViewState extends State<DioErrorView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? Colors.red[100]
-            : Colors.red[900],
-        title: Text(widget.data.requestOptions.path),
-        actions: [
-          Chip(
-            label: Text(widget.data.requestOptions.method),
-            backgroundColor: Colors.lightGreen.withOpacity(0.5),
-          ),
-          SizedBox(width: 8),
-        ],
-      ),
-      body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
-        children: [
-          TitleView(title: Text('Request')),
-          _buildBaseURL(),
-          _buildPath(),
-          _buildMessage(),
-          _buildMap(_request.headers),
-          _buildMap(_request.queryParameters),
-          _buildMap(_request.data),
-          TitleView(title: Text('Response')),
-          _buildStatus(),
-        ],
+    return Theme(
+      data: CustomTheme.instance.customTheme ?? Theme.of(context),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).brightness == Brightness.light
+              ? Colors.red[100]
+              : Colors.red[900],
+          title: Text(widget.data.requestOptions.path),
+          actions: [
+            Chip(
+              label: Text(widget.data.requestOptions.method),
+              backgroundColor: Colors.lightGreen.withOpacity(0.5),
+            ),
+            SizedBox(width: 8),
+          ],
+        ),
+        body: ListView(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          children: [
+            TitleView(title: Text('Request')),
+            _buildBaseURL(),
+            _buildPath(),
+            _buildMessage(),
+            _buildMap(_request.headers),
+            _buildMap(_request.queryParameters),
+            _buildMap(_request.data),
+            TitleView(title: Text('Response')),
+            _buildStatus(),
+          ],
+        ),
       ),
     );
   }

@@ -7,6 +7,7 @@ import 'package:flutter_highlight/themes/atom-one-dark.dart';
 import 'package:flutter_highlight/themes/atom-one-light.dart';
 import 'package:power_logger/external_lib/pretty_json.dart';
 import 'package:power_logger/src/parser/dio_parser/dio_parser.dart';
+import 'package:power_logger/src/theme/custom_theme.dart';
 import 'package:power_logger/src/view/box_view.dart';
 import 'package:power_logger/src/view/table_view.dart';
 import 'package:power_logger/src/view/title_view.dart';
@@ -150,47 +151,50 @@ class _DioResponseViewState extends State<DioResponseView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green[600],
-        title: Text(widget.data!.requestOptions.path),
-        actions: [
-          Chip(
-            label: Text(widget.data!.requestOptions.method),
-            backgroundColor: Colors.lightGreen,
-          ),
-          SizedBox(width: 8),
-        ],
-      ),
-      body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20),
-        children: [
-          TitleView(title: Text('Request')),
-          _buildBaseURL(),
-          _buildPath(),
-          _buildMap(_request.headers),
-          _buildMap(_request.queryParameters),
-          _buildMap(_request.data),
-          TitleView(title: Text('Response')),
-          _buildMap(widget.data!.headers.map),
-          _buildStatus(),
-          SwitchListTile(
-            value: _showRawData,
-            title: Text('RawData'),
-            onChanged: (state) => setState(() => _showRawData = state),
-          ),
-          AnimatedCrossFade(
-            firstChild: _buildRawData(),
-            secondChild: _buildData(),
-            crossFadeState: _showRawData
-                ? CrossFadeState.showFirst
-                : CrossFadeState.showSecond,
-            duration: Duration(milliseconds: 500),
-            firstCurve: Curves.easeInOutCubic,
-            secondCurve: Curves.easeInOutCubic,
-            sizeCurve: Curves.easeInOutCubic,
-          ),
-        ],
+    return Theme(
+      data: CustomTheme.instance.customTheme ?? Theme.of(context),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.green[600],
+          title: Text(widget.data!.requestOptions.path),
+          actions: [
+            Chip(
+              label: Text(widget.data!.requestOptions.method),
+              backgroundColor: Colors.lightGreen,
+            ),
+            SizedBox(width: 8),
+          ],
+        ),
+        body: ListView(
+          padding: EdgeInsets.symmetric(vertical: 20),
+          children: [
+            TitleView(title: Text('Request')),
+            _buildBaseURL(),
+            _buildPath(),
+            _buildMap(_request.headers),
+            _buildMap(_request.queryParameters),
+            _buildMap(_request.data),
+            TitleView(title: Text('Response')),
+            _buildMap(widget.data!.headers.map),
+            _buildStatus(),
+            SwitchListTile(
+              value: _showRawData,
+              title: Text('RawData'),
+              onChanged: (state) => setState(() => _showRawData = state),
+            ),
+            AnimatedCrossFade(
+              firstChild: _buildRawData(),
+              secondChild: _buildData(),
+              crossFadeState: _showRawData
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(milliseconds: 500),
+              firstCurve: Curves.easeInOutCubic,
+              secondCurve: Curves.easeInOutCubic,
+              sizeCurve: Curves.easeInOutCubic,
+            ),
+          ],
+        ),
       ),
     );
   }

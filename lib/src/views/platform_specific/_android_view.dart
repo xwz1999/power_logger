@@ -4,6 +4,7 @@ import 'package:power_logger/src/views/platform_specific/info_tile.dart';
 
 class AndroidView extends StatelessWidget {
   final AndroidDeviceInfo? androidInfo;
+
   AndroidView({Key? key, required this.androidInfo}) : super(key: key);
 
   @override

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:power_logger/src/theme/custom_theme.dart';
 
 /// UnfocusParser
 class UnfocusParser extends StatelessWidget {
   final dynamic data;
   final String? tag;
+
   const UnfocusParser({Key? key, required this.data, this.tag})
       : super(key: key);
 
@@ -17,9 +19,12 @@ class UnfocusParser extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Scaffold(
-              appBar: AppBar(title: Text(data.runtimeType.toString())),
-              body: Text(data.toString()),
+            builder: (context) => Theme(
+              data: CustomTheme.instance.customTheme ?? Theme.of(context),
+              child: Scaffold(
+                appBar: AppBar(title: Text(data.runtimeType.toString())),
+                body: Text(data.toString()),
+              ),
             ),
           ),
         ),
