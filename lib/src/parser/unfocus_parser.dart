@@ -17,16 +17,16 @@ class UnfocusParser extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => Scaffold(
               appBar: AppBar(title: Text(data.runtimeType.toString())),
-              body: Text(data.toString()),
+              body: Text(data.toString(),style: TextStyle(fontSize: 16,color: Colors.black),),
             ),
           ),
         ),
         title: Text(
           data.toString(),
-          maxLines: 1,
+          maxLines: 1, style: TextStyle(fontSize: 16,color: Colors.black),
         ),
         trailing: Chip(
-          label: Text(tag ?? data.runtimeType.toString()),
+          label: Text(tag ?? data.runtimeType.toString(),style: TextStyle(fontSize: 16,color: Colors.black),),
         ),
       ),
     );

@@ -14,7 +14,7 @@ class _SettingsViewState extends State<SettingsView> {
     return ListView(
       children: [
         SwitchListTile(
-          title: Text('终端日志'),
+          title: Text('终端日志',style: TextStyle(fontSize: 16,color: Colors.black),),
           subtitle: Text(''),
           value: LoggerData.markLogger,
           onChanged: (state) {

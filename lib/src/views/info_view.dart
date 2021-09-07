@@ -71,7 +71,7 @@ class _InfoViewState extends State<InfoView>
               SliverList(
                   delegate: SliverChildListDelegate([
                 ListTile(
-                  title: Text('Package Info'),
+                  title: Text('Package Info',style: TextStyle(fontSize: 18,color: Color(0xff333333))),
                   tileColor: Colors.blue.withOpacity(0.2),
                 ),
                 InfoTile(title: 'appName', subTitle: packageInfo!.appName),
@@ -81,7 +81,7 @@ class _InfoViewState extends State<InfoView>
                     title: 'packageName', subTitle: packageInfo!.packageName),
                 InfoTile(title: 'version', subTitle: packageInfo!.version),
                 ListTile(
-                  title: Text('Device Info'),
+                  title: Text('Device Info',style: TextStyle(fontSize: 18,color: Color(0xff333333))),
                   tileColor: Colors.blue.withOpacity(0.1),
                 ),
               ])),

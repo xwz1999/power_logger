@@ -15,8 +15,8 @@ class InfoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(title),
-      subtitle: Text(subTitle),
+      title: Text(title,style: TextStyle(fontSize: 14,color: Color(0xff333333)),),
+      subtitle: Text(subTitle,style: TextStyle(fontSize: 14,color: Color(0xff666666))),
       onLongPress: () async {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         Clipboard.setData(ClipboardData(text: subTitle));

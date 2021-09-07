@@ -18,14 +18,14 @@ class DioResponseBuilder extends StatelessWidget {
           builder: (context) => DioResponseView(data: data),
         ),
       ),
-      title: Text(data.requestOptions.path),
-      subtitle: Text(date.toString()),
+      title: Text(data.requestOptions.path,style: TextStyle(fontSize: 16,color: Color(0xFF333333)),),
+      subtitle: Text(date.toString(),style: TextStyle(fontSize: 14,color: Color(0xFF666666)),),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Chip(
             backgroundColor: Colors.blue.withOpacity(0.8),
-            label: Text(data.requestOptions.method),
+            label: Text(data.requestOptions.method,style: TextStyle(fontSize: 14,color: Colors.black),),
           ),
         ],
       ),

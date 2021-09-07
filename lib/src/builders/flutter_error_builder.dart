@@ -9,8 +9,8 @@ class FlutterErrorBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       tileColor: Colors.red.withOpacity(0.4),
-      title: Text(details.exception.toString()),
-      trailing: Chip(label: Text('EXCEPTION'), backgroundColor: Colors.red),
+      title: Text(details.exception.toString(),style: TextStyle(fontSize: 14,color: Colors.black),),
+      trailing: Chip(label: Text('EXCEPTION',style: TextStyle(fontSize: 14,color: Colors.black),), backgroundColor: Colors.red),
       onTap: () {
         Navigator.push(
           context,
