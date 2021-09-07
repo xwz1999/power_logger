@@ -14,6 +14,8 @@ class _SettingsViewState extends State<SettingsView> {
     return ListView(
       children: [
         SwitchListTile(
+          inactiveThumbColor: Colors.white,
+          inactiveTrackColor: Color(0xFF999999),
           title: Text('终端日志',style: TextStyle(fontSize: 16,color: Colors.black),),
           subtitle: Text(''),
           value: LoggerData.markLogger,
