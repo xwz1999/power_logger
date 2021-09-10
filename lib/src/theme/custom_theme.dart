@@ -7,7 +7,8 @@ class CustomTheme {
   static late CustomTheme _instance = CustomTheme._();
 
   CustomTheme._() {
-    follow = true;
+    follow = false;
+    customTheme=ThemeData.light();
   }
 
   ThemeData? customTheme;
