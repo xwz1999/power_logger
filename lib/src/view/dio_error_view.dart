@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:power_logger/src/theme/custom_theme.dart';
 import 'package:power_logger/src/view/box_view.dart';

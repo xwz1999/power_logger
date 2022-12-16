@@ -68,7 +68,7 @@ class _LoggerDataNotifer<T> extends ValueNotifier {
 }
 
 class LoggerInnerData {
-  final dynamic? rawData;
+  final dynamic rawData;
   final DateTime date;
   final String? tag;
   LoggerInnerData({

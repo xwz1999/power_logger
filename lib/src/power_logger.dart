@@ -32,7 +32,7 @@ class PowerLogger {
     Alignment initAlignment = Alignment.center,
   }) {
     PowerLogger.debug = debug;
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       if (debug) _insertToOverlay(context, initAlignment: initAlignment);
     });
   }
